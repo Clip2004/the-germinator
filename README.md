@@ -72,7 +72,6 @@ The system collects real-time sensor data, transmits it over WiFi via MQTT, stor
 | Data pipeline | Python (MQTT subscriber) |
 | Database | SQL |
 | Visualization | Grafana |
-| Deployment | Docker / docker-compose |
 
 ---
 
@@ -148,8 +147,8 @@ Navigate to `http://localhost:3000` and import `grafana/dashboard.json`.
 
 | Name | Role |
 |---|---|
-| **[Your Name]** | Hardware design, firmware, IoT integration |
-| **Samuel Muñoz** | Hardware design, firmware, IoT integration |
+| **[Felipe Mercado Mercado]** | Hardware design, firmware, IoT integration |
+| **Samuel Muñoz Arias** | Hardware design, firmware, IoT integration |
 
 **Academic advisor:** José Valentín Antonio Restrepo Laverde
 **Institution:** Escuela de Ingeniería de Antioquia (EIA)
