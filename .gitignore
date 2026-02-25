@@ -1,0 +1,28 @@
+# ====================================================
+# .gitignore — The Germinator
+# ====================================================
+
+# Variables de entorno — NUNCA subir al repo
+.env
+
+# Node.js Dependencies
+node_modules/
+package-lock.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary Kicad files
+*.000
+*.bak
+*.kicad_prl
+fp-info-cache
+
+# IDEs
+.vscode/
+.idea/
