@@ -128,39 +128,62 @@ the-germinator/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Docker & docker-compose
-- STM32 development environment (STM32CubeIDE or PlatformIO)
-- MQTT broker (Mosquitto, included in docker-compose)
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Mosquitto](https://mosquitto.org/download/) — MQTT broker installed locally
+- [MAMP](https://www.mamp.info/) — to run MySQL locally
+- STM32CubeIDE — to flash the firmware
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/the-germinator.git
+git clone https://github.com/tu-usuario/the-germinator.git
 cd the-germinator
 ```
 
 ### 2. Configure environment variables
 ```bash
+cd backend/mqtt
 cp .env.example .env
-# Edit .env with your WiFi credentials and MQTT broker IP
+# Edit .env with your credentials
 ```
 
-### 3. Launch backend services
+### 3. Install Node.js dependencies
 ```bash
-cd backend
-docker-compose up -d
+npm install
 ```
 
-### 4. Flash the firmware
-Open the `firmware/stm32/` project in STM32CubeIDE, update `config.h` with your network settings, and flash to the board.
+### 4. Start MAMP and import the database
+- Open MAMP and start the servers
+- Go to `http://localhost/phpmyadmin`
+- Create a database called `germinator`
+- Import `backend/sql/germinator.sql`
 
-### 5. Open Grafana
-Navigate to `http://localhost:3000` and import `grafana/dashboard.json`.
+### 5. Start the Mosquitto broker
+```bash
+mosquitto
+```
 
+### 6. Start the MQTT subscriber
+```bash
+node index.js
+```
+
+### 7. Flash the firmware
+- Open the `firmware/stm32/` project in STM32CubeIDE
+- Copy `Inc/credentials.example.h` to `Inc/credentials.h` and fill in your WiFi and MQTT credentials
+- Build and flash to the STM32 board
+
+### 8. Open Grafana
+- Import `grafana/GerminatorDashboards.json` into your Grafana instance
+- Connect it to your local MySQL database
 ---
 
 ## 📸 Gallery
 
-> *Photos of the assembled PCB, chamber, and Grafana dashboard coming soon.*
+### PCB
+![Mounted PCB](media/photos/mounted_pcb.jpeg)
+
+### Grafana Dashboard
+![Grafana Dashboard](media/photos/grafana_dashboard.png)
 
 ---
 
@@ -174,7 +197,7 @@ Navigate to `http://localhost:3000` and import `grafana/dashboard.json`.
 **Academic advisor:** José Valentín Antonio Restrepo Laverde
 **Institution:** Escuela de Ingeniería de Antioquia (EIA)
 **Course:** Internet of Things
-**Year:** 2024
+**Year:** 2025
 
 ---
 
