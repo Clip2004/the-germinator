@@ -191,7 +191,7 @@ node index.js
 
 | Name | Role |
 |---|---|
-| **[Felipe Mercado Mercado]** | Hardware design, firmware, IoT integration |
+| **Felipe Mercado Mercado** | Hardware design, firmware, IoT integration |
 | **Samuel Muñoz Arias** | Hardware design, firmware, IoT integration |
 
 **Academic advisor:** José Valentín Antonio Restrepo Laverde
