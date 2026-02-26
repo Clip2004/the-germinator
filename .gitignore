@@ -2,12 +2,33 @@
 # .gitignore — The Germinator
 # ====================================================
 
-# Variables de entorno — NUNCA subir al repo
+# Environment variables
 .env
-
+firmware/stm32/Inc/credentials.h
 # Node.js Dependencies
 node_modules/
 package-lock.json
+
+# -------------------------------------
+# ⚙️ STM32CubeIDE — temporary files and build outputs
+# -------------------------------------
+# Build outputs
+firmware/stm32/Debug/
+firmware/stm32/Release/
+
+# IDE settings
+firmware/stm32/.settings/
+firmware/stm32/.cproject
+firmware/stm32/.project
+
+# Compiled objects
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
 
 # System files
 .DS_Store
