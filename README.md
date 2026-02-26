@@ -79,27 +79,48 @@ The system collects real-time sensor data, transmits it over WiFi via MQTT, stor
 
 ```
 the-germinator/
-├── README.md
-├── hardware/
-│   ├── pcb/               # KiCad project files (.sch, .kicad_pcb, Gerbers)
-│   ├── bom/               # Bill of Materials
-│   └── datasheets/        # Component datasheets
+├── backend/
+│   ├── mqtt/
+│   │   ├── index.js
+│   │   └── package.json
+│   └── sql/
+│       └── germinator.sql
+├── docs/
 ├── firmware/
 │   └── stm32/
-│       ├── main.c
-│       └── config.h       # WiFi credentials, MQTT topics (use .env)
-├── backend/
-│   ├── docker-compose.yml
-│   ├── sql/
-│   │   └── schema.sql
-│   └── mqtt/
-│       └── subscriber.py
+│       ├── Inc/
+│       │   ├── credentials.example.h
+│       │   ├── PINS.h
+│       │   ├── dht11_nonblocking.h
+│       │   ├── main.h
+│       │   ├── stm32c0xx_hal_conf.h
+│       │   └── stm32c0xx_it.h
+│       └── Src/
+│           ├── FC41/
+│           ├── STATES/
+│           ├── UART/
+│           ├── publoop/
+│           ├── timer/
+│           ├── main.c
+│           └── dht11_nonblocking.c
 ├── grafana/
-│   └── dashboard.json
-├── docs/
-│   └── report.pdf
-└── media/
-    └── photos/
+│   └── GerminatorDashboards.json
+├── hardware/
+│   ├── bom/
+│   ├── datasheets/
+│   └── pcb/
+│       ├── PCB.pdf
+│       ├── Schematics.pdf
+│       └── pcb_print.pdf
+├── media/
+│   ├── photos/
+│   │   ├── grafana_dashboard.png
+│   │   └── mounted_pcb.jpeg
+│   └── videos/
+│       └── the_germinator.mov
+└── tools/
+    └── simulator/
+        └── mqtt_publisher.js
 ```
 
 ---
